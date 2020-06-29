@@ -1,0 +1,93 @@
+{
+  "name": "node.ts",
+  "version": "1.0.0",
+  "description": "My personal boilerplate for node.js projects in TypeScript",
+  "main": "./build/index.js",
+  "scripts": {
+    "copyfiles": "rm -rf dist/root && mkdir -p dist/root && COPYFILE_DISABLE=1 cp -r build node_modules package.json README.md dist/root",
+    "build": "npm run gen-ver && npm run lint && npm run test && npm run compile && npm run tar",
+    "compile": "rm -rf ./build && tsc",
+    "gen-ver": "echo \"export const version = '${npm_package_version}'\" > src/version.ts",
+    "lint": "eslint src --ext .ts",
+    "lint:dev": "esw -w src --ext .ts",
+    "start": "npm run build && node build/index.js",
+    "start:prod": "node build/index.js",
+    "start:dev": "npm run gen-ver && nodemon",
+    "tar": "mkdir -p dist && npm run copyfiles && cd dist/root && COPYFILE_DISABLE=1 tar cfz ../${npm_package_name}-${npm_package_version}.tgz * && cd ../.. && rm -rf dist/root && echo '\n*** DONE ***' && ls -1 dist",
+    "test": "jest",
+    "test:dev": "jest --watch"
+  },
+  "keywords": [],
+  "author": "Roman Kaspar <roman.kaspar@seznam.cz> (https://redixis.com/)",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/roman-kaspar/node.ts.git"
+  },
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^26.0.3",
+    "@types/node": "^14.0.14",
+    "@typescript-eslint/eslint-plugin": "^3.4.0",
+    "@typescript-eslint/parser": "^3.4.0",
+    "eslint": "^7.3.1",
+    "eslint-watch": "^7.0.0",
+    "jest": "^26.1.0",
+    "nodemon": "^2.0.4",
+    "ts-jest": "^26.1.1",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.5"
+  },
+  "eslintConfig": {
+    "root": true,
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+      "@typescript-eslint"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "rules": {
+      "max-len": [
+        "error",
+        {
+          "code": 120
+        }
+      ],
+      "no-console": 1,
+      "no-param-reassign": [
+        "error",
+        {
+          "props": false
+        }
+      ]
+    }
+  },
+  "eslintIgnore": [
+    "node_modules",
+    "build",
+    "dist"
+  ],
+  "nodemonConfig": {
+    "watch": ["src"],
+    "ext": ".ts,.js,.json",
+    "ignore": ["src/**/*.spec.ts"],
+    "exec": "ts-node ./src/index.ts"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node"
+  },
+  "renovate": {
+    "extends": [
+      "config:base"
+    ],
+    "bumpVersion": "patch",
+    "automerge": true,
+    "major": {
+      "automerge": false
+    }
+  }
+}

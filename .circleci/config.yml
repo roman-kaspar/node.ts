@@ -1,0 +1,22 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/node:12
+    working_directory: ~/node.ts
+    steps:
+      - checkout
+      - run:
+          name: Install packages
+          command: npm ci
+      - run:
+          name: Test and compile
+          command: npm run build
+      - run:
+          name: Create artifact (with production packages only)
+          command: |
+              rm -rf node_modules
+              npm ci --production
+              npm run tar
+      - store_artifacts:
+          path: ~/node.ts/dist
