@@ -5,7 +5,7 @@ The key features are:
 * TypeScript everywhere
 * jest test runner (with ts-jest wrapper)
 * eslint (with TypeScript parser)
-* development mode (watch) for code (nodemon), tests (jest) and linting (esw)
+* development mode (watch) for code compilation (tsc), code execution (nodemon), tests (jest) and linting (esw)
 * CircleCI builds (artifact with production modules only)
 
 ### `package.json` scripts
@@ -29,9 +29,14 @@ modules.
 
 #### `build`
 
-One-time build: generates the version file, lints the .ts files, runs tests using
-ts-jest wrapper of jest test runner and creates build directory with compiled
+One-time build: generates the version file, lints the .ts files, runs unit tests
+using ts-jest wrapper of jest test runner and creates build directory with compiled
 JavaScript sources.
+
+#### `compile`, `compile:dev`
+
+Compiles TypeScript source files down to JavaScript (in build directory). The `:dev`
+version starts incremental compilation (watches for changes).
 
 #### `lint`, `lint:dev`
 

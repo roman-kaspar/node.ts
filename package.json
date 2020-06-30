@@ -1,12 +1,13 @@
 {
   "name": "node.ts",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "My personal boilerplate for node.js projects in TypeScript",
   "main": "./build/index.js",
   "scripts": {
     "copyfiles": "rm -rf dist/root && mkdir -p dist/root && COPYFILE_DISABLE=1 cp -r build node_modules package.json README.md dist/root",
     "build": "npm run gen-ver && npm run lint && npm run test && npm run compile",
     "compile": "rm -rf ./build && tsc",
+    "compile:dev": "npm run compile -- -w",
     "gen-ver": "echo \"export const version = '${npm_package_version}'\" > src/version.ts",
     "lint": "eslint src --ext .ts",
     "lint:dev": "esw -w src --ext .ts",
