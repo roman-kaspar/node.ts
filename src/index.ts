@@ -1,6 +1,11 @@
+import { config as dotenvConfig } from 'dotenv'
+
 import { randInt } from './rand'
 import { sum } from './sum'
 import { version } from './version'
+
+dotenvConfig()
+console.log(process.env)
 
 const a = randInt(100)
 const b = randInt(200)
