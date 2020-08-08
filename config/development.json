@@ -1,0 +1,8 @@
+{
+  "app": {
+    "logs": {
+      "dir": "logs",
+      "rotate": "14d"
+    }
+  }
+}
