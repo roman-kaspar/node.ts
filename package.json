@@ -1,6 +1,6 @@
 {
   "name": "node.ts",
-  "version": "1.0.71",
+  "version": "1.0.72",
   "description": "My personal boilerplate for node.js projects in TypeScript",
   "main": "./build/index.js",
   "scripts": {
@@ -40,7 +40,7 @@
     "eslint-config-airbnb-typescript": "9.0.0",
     "eslint-plugin-import": "2.22.1",
     "eslint-watch": "7.0.0",
-    "jest": "26.4.2",
+    "jest": "26.5.0",
     "ts-jest": "26.4.1",
     "tsc-watch": "4.2.9",
     "typescript": "3.9.7"
