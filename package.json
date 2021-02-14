@@ -1,6 +1,6 @@
 {
   "name": "node.ts",
-  "version": "1.0.148",
+  "version": "1.0.149",
   "description": "My personal boilerplate for node.js projects in TypeScript",
   "main": "./build/index.js",
   "scripts": {
@@ -32,7 +32,7 @@
   "devDependencies": {
     "@types/jest": "26.0.20",
     "@types/nconf": "0.10.0",
-    "@types/node": "14.14.27",
+    "@types/node": "14.14.28",
     "@typescript-eslint/eslint-plugin": "4.15.0",
     "@typescript-eslint/parser": "4.15.0",
     "eslint": "7.20.0",
