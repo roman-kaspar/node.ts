@@ -1,6 +1,6 @@
 {
   "name": "node.ts",
-  "version": "1.0.170",
+  "version": "1.0.171",
   "description": "My personal boilerplate for node.js projects in TypeScript",
   "main": "./build/index.js",
   "scripts": {
@@ -30,7 +30,7 @@
     "winston-transport": "^4.4.0"
   },
   "devDependencies": {
-    "@types/jest": "26.0.21",
+    "@types/jest": "26.0.22",
     "@types/nconf": "0.10.0",
     "@types/node": "14.14.35",
     "@typescript-eslint/eslint-plugin": "4.19.0",
