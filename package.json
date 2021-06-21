@@ -1,6 +1,6 @@
 {
   "name": "node.ts",
-  "version": "1.0.214",
+  "version": "1.0.215",
   "description": "My personal boilerplate for node.js projects in TypeScript",
   "main": "./build/index.js",
   "scripts": {
@@ -24,7 +24,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "nconf": "0.11.2",
+    "nconf": "0.11.3",
     "winston": "^3.3.3",
     "winston-daily-rotate-file": "^4.5.0",
     "winston-transport": "^4.4.0"
