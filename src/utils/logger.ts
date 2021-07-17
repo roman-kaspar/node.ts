@@ -17,14 +17,14 @@ if (config.get('app:logs')) {
   const options = {
     format: formatFile,
     level: (config.get('NODE_ENV') === 'development') ? 'debug' : 'info',
-    filename: (rotate ? 'all-%DATE%' : `${dir}/all-${timestamp().replace(' ', 'T')}.log`),
+    filename: (rotate ? 'all-%DATE%' : `all-${timestamp().replace(' ', 'T')}`),
     dirname: dir,
     maxFiles: rotate,
     extension: '.log',
   };
   myTransports.push(new (rotate ? transports.DailyRotateFile : transports.File)(options));
   options.level = 'error';
-  options.filename = (rotate ? 'errors-%DATE%' : `${dir}/errors-${timestamp().replace(' ', 'T')}.log`);
+  options.filename = (rotate ? 'errors-%DATE%' : `errors-${timestamp().replace(' ', 'T')}`);
   myTransports.push(new (rotate ? transports.DailyRotateFile : transports.File)(options));
 }
 
