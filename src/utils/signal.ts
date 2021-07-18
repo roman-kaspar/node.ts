@@ -17,7 +17,7 @@ class SignalHandler {
 
   async exec(signal: string, code: number) {
     if (this.terminating) {
-      logger.info(`Received signal "${signal}", gracefull shutdown sequence already running.`);
+      logger.warn(`Received signal "${signal}", gracefull shutdown sequence already running, ignoring.`);
       return;
     }
     this.terminating = true;

@@ -3,6 +3,11 @@
     "logs": {
       "dir": "logs",
       "rotate": "14d"
+    },
+    "name": "testing",
+    "token": {
+      "header": "x-api-token",
+      "value": "secret-token"
     }
   }
 }
