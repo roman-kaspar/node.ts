@@ -1,7 +1,6 @@
 import Koa from 'koa';
 import bodyParser from 'koa-bodyparser';
 import compress from 'koa-compress';
-import helmet from 'koa-helmet';
 import noCache from 'koa-no-cache';
 
 import { routes } from './routes';
@@ -51,8 +50,6 @@ server.use(async (ctx: Koa.Context, next: Koa.Next): Promise<void> => {
     };
   }
 });
-// helmet: security
-server.use(helmet());
 // no-cache
 server.use(noCache({ global: true }));
 // API token verification
@@ -75,8 +72,6 @@ server.use(async (ctx: Koa.Context, next: Koa.Next): Promise<void> => {
 server.use(compress());
 // body parser
 server.use(bodyParser());
-// TODO: sessions go here...
-// server.use(...);
 // routes
 server.use(routes);
 
