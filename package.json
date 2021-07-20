@@ -1,8 +1,11 @@
 {
   "name": "node.ts",
-  "version": "1.0.229",
+  "version": "1.0.231",
   "description": "My personal boilerplate for API node.js projects in TypeScript",
   "main": "./build/index.js",
+  "engines": {
+    "node": ">=12"
+  },
   "scripts": {
     "build": "yarn gen-ver && yarn lint && yarn test && yarn compile && yarn tar",
     "compile": "rm -rf ./build && tsc && find build -name '*.spec.js' -exec rm \\{\\} \\;",

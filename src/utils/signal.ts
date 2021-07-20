@@ -26,11 +26,16 @@ class SignalHandler {
       await this.handlers[i](signal); // eslint-disable-line no-await-in-loop
     }
     logger.info(`Exiting with code ${code}.`);
-    process.exit(code);
+    logger.on('finish', () => {
+      setTimeout(() => {
+        process.exit(code);
+      }, 250); // it should work even without swtTimeout(), but it does NOT
+    });
+    logger.end();
   }
 }
 
 export const signalHandler = new SignalHandler();
 
-process.on('SIGINT', () => { signalHandler.exec('SIGINT', 127); });
-process.on('SIGTERM', () => { signalHandler.exec('SIGTERM', 127); });
+process.on('SIGINT', async () => { await signalHandler.exec('SIGINT', 127); });
+process.on('SIGTERM', async () => { await signalHandler.exec('SIGTERM', 127); });
