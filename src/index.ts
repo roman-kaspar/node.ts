@@ -12,11 +12,6 @@ import { signalHandler, SignalHandlerFn } from './utils/signal';
 
 import { version } from './version';
 
-const asyncSignalHandler: SignalHandlerFn = () => {
-  logger.info('Graceful shutdown completed, thanks for flying with us!');
-};
-signalHandler.add(asyncSignalHandler);
-
 const appName = config.get('app:name');
 const runMode = config.get('NODE_ENV') || 'unknown';
 logger.info(`API server ${appName ? `"${appName}" ` : ''}(version ${version}) starting in ${runMode} mode...`);
@@ -84,3 +79,9 @@ const port = config.get('app:port') || 3000;
 server.listen(port, () => {
   logger.info(`Server ready, listening on port ${port}`);
 });
+
+// this signal handler should be added as the last one
+const finalSignalHandler: SignalHandlerFn = () => {
+  logger.info('Graceful shutdown completed, thanks for flying with us!');
+};
+signalHandler.add(finalSignalHandler);

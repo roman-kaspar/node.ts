@@ -1,6 +1,8 @@
 import { logger } from './logger';
 
-export type SignalHandlerFn = (name: string) => void | Promise<void>;
+export type SignalHandlerFn = () => void | Promise<void>;
+
+const delay = (ms: number) => new Promise((resolve) => { setTimeout(resolve, ms, undefined); });
 
 class SignalHandler {
   protected handlers: SignalHandlerFn[] = [];
@@ -23,19 +25,15 @@ class SignalHandler {
     this.terminating = true;
     logger.info(`Received signal "${signal}", initiating gracefull shutdown sequence.`);
     for (let i = 0; i < this.handlers.length; i += 1) {
-      await this.handlers[i](signal); // eslint-disable-line no-await-in-loop
+      await this.handlers[i](); // eslint-disable-line no-await-in-loop
     }
-    logger.info(`Exiting with code ${code}.`);
-    logger.on('finish', () => {
-      setTimeout(() => {
-        process.exit(code);
-      }, 250); // it should work even without swtTimeout(), but it does NOT
-    });
-    logger.end();
+    logger.info(`Exiting with code ${code} shortly.`);
+    await delay(50); // logger.on('finish', ...) solution does not work, adding time to flush the buffers
+    process.exit(code);
   }
 }
 
 export const signalHandler = new SignalHandler();
 
-process.on('SIGINT', async () => { await signalHandler.exec('SIGINT', 127); });
-process.on('SIGTERM', async () => { await signalHandler.exec('SIGTERM', 127); });
+process.on('SIGINT', () => { signalHandler.exec('SIGINT', 127); });
+process.on('SIGTERM', () => { signalHandler.exec('SIGTERM', 127); });
