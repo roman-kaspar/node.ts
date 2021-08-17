@@ -8,3 +8,10 @@ export const routes = router.routes();
 router.get('/', (ctx: Koa.Context): void => {
   ctx.body = { ok: true };
 });
+
+router.get('/doc/:version', (ctx: Koa.Context): void => {
+  ctx.body = {
+    version: ctx.params.version,
+    text: 'Hello world!',
+  };
+});
