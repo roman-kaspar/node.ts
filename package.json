@@ -1,6 +1,6 @@
 {
   "name": "node.ts",
-  "version": "1.0.243",
+  "version": "1.0.244",
   "description": "Boilerplate for API node.js projects in TypeScript.",
   "main": "./build/index.js",
   "engines": {
@@ -54,7 +54,7 @@
     "eslint-watch": "7.0.0",
     "jest": "27.0.6",
     "ts-jest": "27.0.5",
-    "tsc-watch": "4.4.0",
+    "tsc-watch": "4.5.0",
     "typescript": "4.3.5"
   },
   "eslintConfig": {
