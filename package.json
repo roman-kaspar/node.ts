@@ -1,6 +1,6 @@
 {
   "name": "node.ts",
-  "version": "1.0.312",
+  "version": "1.0.313",
   "description": "Boilerplate for API node.js projects in TypeScript.",
   "main": "./build/index.js",
   "engines": {
@@ -32,7 +32,7 @@
     "koa-compress": "^5.0.1",
     "koa-no-cache": "^2.0.0",
     "koa-router": "^10.0.0",
-    "nconf": "0.11.4",
+    "nconf": "0.12.0",
     "winston": "^3.3.3",
     "winston-daily-rotate-file": "^4.5.5",
     "winston-transport": "^4.4.0"
