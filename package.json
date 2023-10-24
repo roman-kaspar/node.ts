@@ -1,6 +1,6 @@
 {
   "name": "node.ts",
-  "version": "1.0.334",
+  "version": "1.0.335",
   "description": "Boilerplate for API node.js projects in TypeScript.",
   "main": "./build/index.js",
   "engines": {
@@ -41,7 +41,7 @@
     "@types/jest": "26.0.24",
     "@types/koa": "2.13.4",
     "@types/koa-bodyparser": "4.3.11",
-    "@types/koa-compress": "4.0.3",
+    "@types/koa-compress": "4.0.5",
     "@types/koa-router": "7.4.4",
     "@types/nconf": "0.10.3",
     "@types/node": "16.18.21",
