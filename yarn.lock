@@ -952,10 +952,10 @@
     "@types/koa" "*"
     "@types/node" "*"
 
-"@types/koa-router@7.4.4":
-  version "7.4.4"
-  resolved "https://registry.yarnpkg.com/@types/koa-router/-/koa-router-7.4.4.tgz#db72bde3616365d74f00178d5f243c4fce7da572"
-  integrity sha512-3dHlZ6CkhgcWeF6wafEUvyyqjWYfKmev3vy1PtOmr0mBc3wpXPU5E8fBBd4YQo5bRpHPfmwC5yDaX7s4jhIN6A==
+"@types/koa-router@7.4.6":
+  version "7.4.6"
+  resolved "https://registry.yarnpkg.com/@types/koa-router/-/koa-router-7.4.6.tgz#8489faddecd744f8272ec12d20337d7509b05fe4"
+  integrity sha512-elqZpjdH8bsi4HNSKwjY4nRVi65dd7kJoVEYXHMyI84R3wStzGnFSpYbilzqcUzPeZHiEhL0chfM593NeojqzQ==
   dependencies:
     "@types/koa" "*"
 
