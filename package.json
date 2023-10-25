@@ -1,6 +1,6 @@
 {
   "name": "node.ts",
-  "version": "1.0.339",
+  "version": "1.0.340",
   "description": "Boilerplate for API node.js projects in TypeScript.",
   "main": "./build/index.js",
   "engines": {
@@ -49,7 +49,7 @@
     "@typescript-eslint/parser": "4.33.0",
     "eslint": "7.32.0",
     "eslint-config-airbnb-base": "14.2.1",
-    "eslint-config-airbnb-typescript": "12.3.1",
+    "eslint-config-airbnb-typescript": "17.1.0",
     "eslint-plugin-import": "2.29.0",
     "eslint-watch": "7.0.0",
     "jest": "27.5.1",
