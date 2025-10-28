@@ -949,10 +949,10 @@
   dependencies:
     "@types/koa" "*"
 
-"@types/koa-compress@4.0.6":
-  version "4.0.6"
-  resolved "https://registry.yarnpkg.com/@types/koa-compress/-/koa-compress-4.0.6.tgz#591bb270e3212cb1f9be587510daea5629037c52"
-  integrity sha512-jJzlsQTeIXRfQzY7y2Dl/syqOxvEaNJzFTJ8ZGaDFWvqgMmCXplfCGjPfHQgU7xYNKq/mCdN3YWus1YOldfIwg==
+"@types/koa-compress@4.0.7":
+  version "4.0.7"
+  resolved "https://registry.yarnpkg.com/@types/koa-compress/-/koa-compress-4.0.7.tgz#c06737bac0c0f9a43b16a8d5296d91d05cc9399d"
+  integrity sha512-NqP9qCBfXCu2+RYkGzEENBkqXWExOPeBEsvj3F0xtVxKDwwdfRRtVdpxJeTRAq2Ml3qlUnDbK8bKHWwe6V1kkg==
   dependencies:
     "@types/koa" "*"
     "@types/node" "*"
